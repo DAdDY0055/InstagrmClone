@@ -14,7 +14,6 @@
   <%= form_with(model: @picture) do |form| %>
     <div class="picture_content">
       <%= form.label :画像 %>
-      <%= image_tag(@picture.image.url) if @picture.image.url %>
       <%= form.file_field :image %>
     </div>
     <div class="picture_content">

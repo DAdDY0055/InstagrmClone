@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-  before_action :set_picture, only: [:show, :edit, :update]
+  before_action :set_picture, only: [:show, :edit, :update, :destroy]
 
   def new
     @picture = Picture.new
@@ -7,7 +7,7 @@ class PicturesController < ApplicationController
 
   def create
     Picture.create(picture_params)
-    redirect_to new_picture_path
+    redirect_to pictures_path
   end
 
   def confirm
@@ -31,7 +31,9 @@ class PicturesController < ApplicationController
     @pictures = Picture.all
   end
 
-  def delete
+  def destroy
+    @picture.destroy
+    redirect_to pictures_path, notice: '投稿を削除しました'
   end
 
   private
