@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: picture_sns_development
+
+test:
+  <<: *default
+  database: picture_sns_test
+
+production:
+  <<: *default
+  database: picture_sns_production
+  username: picture_sns
+  password: <%= ENV['PICTURE_SNS_DATABASE_PASSWORD'] %>
