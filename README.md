@@ -4,7 +4,7 @@ Instagram Clone
 Overview
 DIC PHASE3大課題【InstagrmClone作成】
 
-・画像のの投稿・投稿確認・編集・一覧表示・削除機能があるアプリケーション
+・画像の投稿・投稿確認・編集・一覧表示・削除機能があるアプリケーション
 
 ## Description
 
