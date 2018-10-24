@@ -11,12 +11,14 @@ class PicturesController < ApplicationController
   end
 
   def create
-    Picture.create(picture_params)
+    @picture = Picture.create(picture_params)
+    @picture.user_id = current_user.id
     redirect_to pictures_path
   end
 
   def confirm
     @picture = Picture.new(picture_params)
+    @picture.user_id = current_user.id
     render :new if @picture.invalid?
   end
 
