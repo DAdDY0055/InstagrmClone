@@ -15,19 +15,16 @@
 　  
 　  <header>
       <ul>
-        <li><a href="/pictures">投稿一覧</a></li>
-        <li>
-          <a>
-            <% if logged_in? %>
-              <%= link_to "お気に入り一覧", favorite_index_path(current_user.id) %>
-              <%= link_to "プロフィール", user_path(current_user.id) %>
-              <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-            <% else %>
-              <%= link_to "ユーザ登録", new_user_path %>
-              <%= link_to "ログイン", new_session_path %>
-            <% end %>
-          </a>
-        </li>
+        <li><%= link_to "投稿一覧", root_path %></li>
+      <% if logged_in? %>
+        <li><%= link_to "新規投稿", new_picture_path %></li>
+        <li><%= link_to "お気に入り一覧", favorite_index_path(current_user.id) %></li>
+        <li><%= link_to "プロフィール", user_path(current_user.id) %></li>
+        <li><%= link_to "ログアウト", session_path(current_user.id), method: :delete %></li>
+      <% else %>
+        <li><%= link_to "ユーザ登録", new_user_path %></li>
+        <li><%= link_to "ログイン", new_session_path %></li>
+      <% end %>
       </ul>
 
     <%= yield %>
