@@ -1,0 +1,6 @@
+<h1><%= @user.name %>のお気に入り一覧</h1>
+  
+<% @favorites_pictures.each do |picture| %>
+  <p>画像： <%= image_tag picture.image.url %></p>
+  <p>コメント： <%= picture.content %></p>
+<% end %>

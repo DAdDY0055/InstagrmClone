@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:new, :create, :show]
+  get '/users/favorite/:id', to: 'users#favorite_index', as: 'favorite_index'
 
   resources :sessions, only: [:new, :create, :destroy]
 
