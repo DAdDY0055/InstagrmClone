@@ -5,7 +5,6 @@
 <p>お気に入り</p>
   
 <% @favorites_pictures.each do |picture| %>
-  <% binding.pry %>
   <p>画像： <%= image_tag picture.image.url %></p>
   <p>コメント： <%= picture.content %></p>
 <% end %>
