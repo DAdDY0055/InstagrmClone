@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PictureSns</title>
+    <title>PictureSNS</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,15 +12,29 @@
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
-
-    <% if logged_in? %>
-      <%= link_to "プロフィール", user_path(current_user.id) %>
-      <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-    <% else %>
-      <%= link_to "ユーザ登録", new_user_path %>
-      <%= link_to "ログイン", new_session_path %>
-    <% end %>
+　  
+　  <header>
+      <ul>
+        <li><a href="/pictures">投稿一覧</a></li>
+        <li>
+          <a>
+            <% if logged_in? %>
+              <%= link_to "プロフィール", user_path(current_user.id) %>
+              <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+            <% else %>
+              <%= link_to "ユーザ登録", new_user_path %>
+              <%= link_to "ログイン", new_session_path %>
+            <% end %>
+          </a>
+        </li>
+      </ul>
 
     <%= yield %>
+
+　  <footer>
+      <p>DIVE INTO CODE 201808期生</p>
+      <p>Copyright Takuya Nakahara/</p>> 
+    </footer>
+
   </body>
 </html>
