@@ -3,4 +3,5 @@
 <% @favorites_pictures.each do |picture| %>
   <p>画像： <%= image_tag picture.image.url %></p>
   <p>コメント： <%= picture.content %></p>
+  <p>投稿者： <%= picture.user.name %></p>
 <% end %>
