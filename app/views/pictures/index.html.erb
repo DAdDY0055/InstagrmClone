@@ -2,23 +2,19 @@
 
 <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>画像</th>
-    <th>コメント</th>
-    <th>投稿者</th>
-  </tr>
-
-<% @pictures.each do |picture| %>
-  <tr>
-    <td><%= image_tag picture.image.url %></td>
-    <td><%= picture.content %></td>
-    <td><%= picture.user.name %></td>
-    <td><%= link_to '見る', picture_path(picture.id) %></td>
-    <td><%= link_to '編集する', edit_picture_path(picture.id) %></td>
-    <td><%= link_to '削除する', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %>
-  </tr>
-<% end %>
-</table>
+<div class="container">
+  <ul class="row">
+    <% @pictures.each do |picture| %>
+    <li class="col-md-4">
+      <p><%= image_tag picture.image.url %></p>
+      <p>コメント：<%= picture.content %></p>
+      <p>投稿者  ：<%= picture.user.name %></p>
+      <p><%= link_to '見る', picture_path(picture.id) %></p>
+      <p><%= link_to '編集する', edit_picture_path(picture.id) %></p>
+      <p><%= link_to '削除する', picture_path(picture.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></p>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to '新規投稿画面に戻る', new_picture_path %>

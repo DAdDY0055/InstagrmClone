@@ -1,7 +1,13 @@
 <h1><%= @user.name %>のお気に入り一覧</h1>
   
-<% @favorites_pictures.each do |picture| %>
-  <p>画像： <%= image_tag picture.image.url %></p>
-  <p>コメント： <%= picture.content %></p>
-  <p>投稿者： <%= picture.user.name %></p>
-<% end %>
+<div class="container">
+  <ul class="row">
+  <% @favorites_pictures.each do |picture| %>
+    <li class="col-md-4">
+      <p><%= image_tag picture.image.url %></p>
+      <p>コメント： <%= picture.content %></p>
+      <p>投稿者  ： <%= picture.user.name %></p>
+    </li>
+  <% end %>
+  </ul>
+</div>

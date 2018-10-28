@@ -5,7 +5,13 @@
 
 <h4><%= @user.name %>の投稿一覧</h4>
 
-<% @user_pictures.each do |picture| %>
-  <p>画像： <%= image_tag picture.image.url %></p>
-  <p>コメント： <%= picture.content %></p>
-<% end %>
+<div class="container">
+  <ul class="row">
+　<% @user_pictures.each do |picture| %>
+    <li class="col-md-4">
+　    <p><%= image_tag picture.image.url %></p>
+　    <p>コメント： <%= picture.content %></p>
+    </li>
+  <% end %>
+  </ul>
+</div>
