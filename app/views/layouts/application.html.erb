@@ -3,13 +3,12 @@
   <head>
     <title>PictureSNS</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body> 
-　  <header>
+    <header>
       <ul>
         <li><%= link_to "投稿一覧", root_path %></li>
       <% if logged_in? %>
@@ -26,7 +25,7 @@
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
-    
+
     <%= yield %>
 
 　  <footer>
