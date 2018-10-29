@@ -8,11 +8,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-　  
+  <body> 
 　  <header>
       <ul>
         <li><%= link_to "投稿一覧", root_path %></li>
@@ -27,6 +23,10 @@
       <% end %>
       </ul>
 
+    <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
+    
     <%= yield %>
 
 　  <footer>
