@@ -65,10 +65,16 @@ h1, h2, h3 {
   padding: 2px;
 }
 
+.row ul {
+  float: center;
+}
+
 .row li {
   background-color: #FFFFFF;
   border: solid;
   border-color: #CCFFFF;
+  display: inline;
+  text-align: center;
 }
 
 img {
@@ -76,4 +82,3 @@ img {
   width: 100%;
   text-align: center;
 }
-
