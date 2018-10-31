@@ -52,9 +52,10 @@ class PicturesController < ApplicationController
   def destroy
     unless @picture.user_id == current_user.id
       redirect_to root_path, notice: '自分の投稿以外は削除できません'
+    else
+      @picture.destroy
+      redirect_to pictures_path, notice: '投稿を削除しました'
     end
-    @picture.destroy
-    redirect_to pictures_path, notice: '投稿を削除しました'
   end
 
   private
