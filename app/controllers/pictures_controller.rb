@@ -33,7 +33,7 @@ class PicturesController < ApplicationController
 
   def edit
     unless @picture.user_id == current_user.id
-      redirect_to root_path
+      redirect_to root_path, notice: '自分の投稿以外は編集できません'
     end
   end
 
@@ -50,6 +50,9 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+    unless @picture.user_id == current_user.id
+      redirect_to root_path, notice: '自分の投稿以外は削除できません'
+    end
     @picture.destroy
     redirect_to pictures_path, notice: '投稿を削除しました'
   end
