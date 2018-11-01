@@ -5,7 +5,9 @@
       <ul>
 
       <% @picture.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <h2 class="alert alert-danger" role="alert">
+        <strong><%= msg %></strong>
+      </h2>
       <% end %>
       </ul>
     </div>
