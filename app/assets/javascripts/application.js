@@ -13,4 +13,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery/dist/jquery.js
+//= require bootstrap
+//= require bootstrap-fileinput
+//= require angular
+//= require leaflet
 //= require_tree .
