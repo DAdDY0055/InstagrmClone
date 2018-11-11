@@ -18,11 +18,17 @@
     <%= form.hidden_field :image_cache %>
   </div>
 
+　<% if @picture.image_cache %>
   <div class="btn btn-default btn-file">
     <%= form.label :ファイルを選択 %>
     <%= form.file_field :image %>
   </div>
     <%= form.text_field :image_cache %>
+  <% else %>
+  <div class="picture_content">
+    <%= form.file_field :image %>
+  </div>
+  <% end %>
 
   <div class="picture_content">
     <%= form.label :コメント %>
