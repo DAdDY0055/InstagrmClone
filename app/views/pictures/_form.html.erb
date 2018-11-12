@@ -19,11 +19,14 @@
   </div>
 
 　<% if @picture.image_cache %>
-  <div class="btn btn-default btn-file">
-    <%= form.label :ファイルを選択 %>
+  <div class="picture_content">
+　  <%= form.label :前回アップロード %>
+　  <%= simple_format(@picture.image_cache.gsub!(/.{26}\//, ""), :style => "display:inline;") %>
+  </div>
+  <div class="picture_content">
+    <%= form.label :写真を変更する %>
     <%= form.file_field :image %>
   </div>
-    <%= form.text_field :image_cache %>
   <% else %>
   <div class="picture_content">
     <%= form.file_field :image %>
