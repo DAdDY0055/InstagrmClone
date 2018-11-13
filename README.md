@@ -15,7 +15,7 @@ Heroku　URL
 https://picture-sns.herokuapp.com/
 
 ## Dependency
-・ruby 2.4.5p335 (2018-10-18 revision 65137) [x86_64-darwin17] 
+・ruby 2.4.5p335 (2018-10-18 revision 65137) [x86_64-darwin17]  
 ・Rails 5.1.6  
 ・psql (PostgreSQL) 9.3.18  
 ・jQuery version 3.3.1  
