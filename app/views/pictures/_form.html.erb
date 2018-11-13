@@ -21,7 +21,7 @@
 　<% if @picture.image_cache %>
   <div class="picture_content">
 　  <%= form.label :前回アップロード %>
-　  <%= simple_format(@picture.image_cache.gsub!(/.{26}\//, ""), :style => "display:inline;") %>
+　  <%= simple_format(@picture.image_cache, :style => "display:inline;") %>
   </div>
   <div class="picture_content">
     <%= form.label :写真を変更する %>
